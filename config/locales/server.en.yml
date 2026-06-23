@@ -1,0 +1,4 @@
+en:
+  site_settings:
+    discourse_native_tag_filters_enabled: "Enable native multi-tag discovery filters"
+    discourse_native_tag_filters_legacy_all_word: "Legacy placeholder used only when redirecting old /tags/intersection URLs"

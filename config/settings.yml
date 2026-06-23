@@ -1,0 +1,7 @@
+plugins:
+  discourse_native_tag_filters_enabled:
+    default: true
+    client: true
+  discourse_native_tag_filters_legacy_all_word:
+    default: "everything"
+    client: true
