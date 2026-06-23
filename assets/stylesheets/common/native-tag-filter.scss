@@ -8,6 +8,8 @@
   }
 
   > li,
+  .category-drop,
+  .category-drop .select-kit-header,
   .native-tag-filter-chooser,
   .native-tag-filter-chooser .select-kit-header {
     box-sizing: border-box;
@@ -19,18 +21,35 @@
     min-width: 12rem;
   }
 
+  .category-drop .select-kit-header,
   .native-tag-filter-chooser .select-kit-header {
     width: 100%;
+    align-items: center;
+    line-height: normal;
+    min-height: 0;
   }
 
+  .category-drop .select-kit-header-wrapper,
+  .category-drop .formatted-selection,
+  .category-drop .selected-name,
+  .category-drop .name,
   .native-tag-filter-chooser .select-kit-header-wrapper,
   .native-tag-filter-chooser .formatted-selection,
   .native-tag-filter-chooser .selected-name,
   .native-tag-filter-chooser .name {
+    align-items: center;
+    line-height: normal;
+    min-height: 0;
     min-width: 0;
-    overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+  }
+
+  .category-drop .selected-name,
+  .category-drop .name,
+  .native-tag-filter-chooser .selected-name,
+  .native-tag-filter-chooser .name {
+    overflow: hidden visible;
   }
 
   .native-tag-filter-chooser .select-kit-body {
@@ -38,6 +57,10 @@
     min-width: min(100%, calc(100vw - 2rem));
     overflow-x: hidden;
   }
+}
+
+.mobile-view .category-breadcrumb {
+  display: flex !important;
 }
 
 @media screen and (min-width: 640px) {
@@ -122,8 +145,8 @@
   .navigation-container .category-breadcrumb {
     grid-column: 1;
     grid-row: 2;
-    display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: flex !important;
+    flex-wrap: wrap;
     gap: 0.5rem;
     width: 100%;
     min-width: 0;
@@ -131,9 +154,15 @@
   }
 
   .navigation-container .category-breadcrumb > li {
-    width: 100%;
+    flex: 1 1 min(12rem, 100%);
     min-width: 0;
     margin: 0;
+  }
+
+  .mobile-view
+    .category-breadcrumb.hidden:has(.native-tag-filter-chooser)
+    .native-tag-filter-chooser-item {
+    flex-basis: 100%;
   }
 
   .navigation-container .category-breadcrumb .category-drop,
